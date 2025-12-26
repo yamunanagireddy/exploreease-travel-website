@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRAVEL PLACES</title>
+    <style>
+
+          * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          font-family: Arial, sans-serif;
+        }
+
+        body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+        background: #eaeaea;
+        overflow-x: hidden; /* 🚫 Remove horizontal scroll */
+      }
+       
+
+        /* BACKGROUND IMAGE */
+        .first-image{
+          position:relative;
+        }
+
+        .first-image img{
+          width:100%;
+          margin-right: 0px;
+          height:700px;
+          object-fit:cover;
+          display:block;
+        }
+
+        /* NAVBAR */
+        .nav-links{
+          position:fixed;
+          width: 100%;
+          top:0px;
+          left:50%;
+          transform:translateX(-50%);
+          justify-content:space-between;
+          color:#fff;
+          font-size:16px;
+          font-weight:bold;
+          padding: 10px 20px;
+          margin-top:0;
+          margin-left: 0;
+        }
+
+        .place{
+          letter-spacing:3px;
+          width: 800px;
+        }
+
+        .nav{
+         background:rgb(146, 145, 145);
+          padding: 15px;
+          display: flex;
+          gap: 30px;
+          position: fixed;
+          top: 0;
+          width: 100%;
+          z-index: 10;
+          left:0px;
+        }
+        
+        .nav a{
+           color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+         
+        .nav a:hover {
+        color: #00ff88;
+        }
+
+        @media(max-width: 850px) {
+          .content-box {
+            flex-direction: column;
+            top: 15%;
+            padding: 0 20px;
+            text-align: center;
+          }
+
+          .form-box {
+            width: 90%;
+            margin-top: 25px;
+          }
+        }
+
+      
+
+        /* CONTENT: TEXT LEFT + FORM RIGHT */
+        .content-box{
+          width:80%;
+          position:absolute;
+          top:45%;
+          left:50%;
+          transform:translate(-50%, -50%);
+          display:flex;
+          justify-content:space-between;
+          align-items:center;
+          animation: fadeUp 1.5s ease;
+        }
+
+        /* TEXT SECTION */
+        .text-box{
+          max-width:450px;
+        }
+
+        .text-box h2{
+          color: white;
+          font-size:50px;
+          font-weight:lighter;
+          line-height:1.2;
+          margin-bottom:15px;
+          animation: zoomIn 1.8s ease;
+        }
+
+        .text-box span{
+          color:#00d14f;
+        }
+
+        .btn{
+          margin-top:20px;
+          background:#00d14f;
+          padding:14px 40px;
+          color:white;
+          border-radius:3px;
+          font-size:14px;
+          letter-spacing:1px;
+          border:none;
+          transition: 0.3s;
+        }
+
+        /* RIGHT FORM BOX */
+        .form-box{
+          background:white;
+          width:500px;
+          padding:40px;
+          border-radius:4px;
+          box-shadow:0px 5px 30px rgba(0,0,0,0.25);
+          animation: Up 1s ease forwards;
+        }
+
+        @keyframes Up {
+          0% {
+            opacity: 0;
+            transform: translateY(40px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        fieldset{
+          border:none;
+        }
+
+        .row{
+          display:flex;
+          justify-content:space-between;
+          margin-bottom:1px;
+        }
+
+        .field-group{
+          width:48%;
+        }
+
+        .label{
+          display:block;
+          font-size:12px;
+          letter-spacing:1px;
+          color:#666;
+          text-transform:uppercase;
+          margin-bottom:6px;
+        }
+
+        select,
+        input[type="date"]{
+          width:100%;
+          padding:12px;
+          border:1px solid #ccc;
+          border-radius:4px;
+          font-size:14px;
+        }
+
+        .radio-group{
+          display:flex;
+          gap:20px;
+          margin:20px 0;
+          font-size:14px;
+          color:#555;
+        }
+
+        .submit-btn{
+          width:150px;
+          padding:12px;
+          background:#00d14f;
+          color:white;
+          border:none;
+          border-radius:4px;
+          letter-spacing:2px;
+          cursor:pointer;
+          font-size:14px;
+          transition: 0.3s;
+        }
+
+         @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+
+
+        @keyframes zoomIn {
+          from { transform: scale(1.3); opacity: 0; }
+          to { transform: scale(1); opacity: 1; }
+        }
+
+
+
+       /* love places */
+       .love-places{
+        text-align: center;
+        padding: 80px 20px;
+        max-width: 900px;
+        margin: 0 auto;
+       }
+        .love-places h3 {
+        font-size: 42px;
+        font-weight: 500;
+        color: #333;
+        margin-bottom: 10px;
+      }
+       .underline{
+        width: 50px;
+       height: 3px;
+       background-color: #00d084;
+       margin: 0 auto 30px;
+       }
+        .love-places p {
+        font-size: 18px;
+        line-height: 1.8;
+        color: #555;
+        font-style: italic;
+       }
+
+       .profile {
+        margin-top: 40px;
+        }
+        .profile img {
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        object-fit: cover;
+        }
+        .profile h4 {
+        margin-top: 15px;
+        font-size: 16px;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        font-weight: bold;
+         }
+
+        .profile p {
+         color: #999;
+         font-style: normal;
+         }
+       /* top places */
+
+         .top-place{
+           font-size: 42px;
+           font-weight: 500;
+           color: #333;
+           margin-bottom: 10px;
+           text-align: center;
+         }
+        .gallary{
+        display: flex;
+        gap:20px;
+        margin-left: 20px;
+        width: 100%;
+        justify-content: center;
+      }
+
+
+      
+      
+      .img-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .img-container img{
+        display: block;
+        height: 400px;
+        width:200px;
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 30px;
+      }
+      .img-container:hover {
+        transform: scale(1.05);
+      }
+
+      .img-name{
+        margin-top: 8px;
+      }
+
+      /* small text */
+       .small-text{
+          text-align: center;
+          padding: 80px 20px;
+          max-width: 900px;
+          font-size: 42px;
+          font-weight: 500;
+          color: #333;
+          justify-content: center;
+          align-content: center;
+          width: 100%;
+          height: 400px;
+          margin-left: 300px;
+          margin-bottom:10px;
+      
+         }
+
+         .underline{
+          width: 50px;
+          height: 3px;
+          background-color: #00d084;
+          margin: 0 auto 30px;
+         }
+
+         /* <!-- image side content --> */
+         .details{
+          margin-left: 0;
+          width: 100%;
+         }
+       .details-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color:rgb(247, 243, 243);
+        padding: 60px 100px;
+      }
+
+      @keyframes left {
+        0% {
+          opacity: 0;
+          transform: translate(10px,20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translate(10px,20px);
+        }
+      }
+
+      .details-img {
+      flex: 1;
+      width: 100%;
+      }
+
+     .details-img img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+      object-fit: cover;
+      animation: left 0.5s ease-in forwards;
+    }
+
+     .details-content {
+      flex: 1;
+      padding: 0 50px;
+      width: 100%;
+      animation: slideRight 1s ease-out forwards;
+    }
+
+          @keyframes slideRight {
+        0% {
+          opacity: 0;
+          transform: translateX(30px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+     .details-content h3 {
+      font-size: 30px;
+      color: #1a1a1a;
+      margin-bottom: 20px;
+    }
+
+     .details-content p {
+      color: #777;
+      line-height: 1.8;
+      font-size: 16px;
+    }
+
+      .read-more {
+      display: inline-block;
+      margin-top: 30px;
+      background: #00c853;
+      color: #fff;
+      padding: 10px 25px;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: bold;
+      transition: 0.3s ease;
+    }
+
+     .read-more:hover {
+      background: #009d3a;
+    }
+
+        @media (max-width: 768px) {
+      .details-container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .details-content {
+        width: 100%;
+      }
+
+      .details-img img {
+        width: 100%;
+        height: auto;
+      }
+
+      .details-container:nth-child(2) {
+        flex-direction: column;
+      }
+    }
+
+     /* logos */
+       .travel-section h1 {
+      font-size: 48px;
+      color: #333;
+      margin-top: 80px;
+      margin-bottom: 10px;
+      text-align: center;
+      animation: travel 1s ease forwards;
+      }
+
+      @keyframes travel {
+        0% {
+          opacity: 0;
+          transform: translateY(40px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    
+    .travel-section h1::after {
+      display: block;
+      width: 60px;
+      height: 3px;
+      background-color: #00d084;
+      margin: 10px auto;
+      border-radius: 2px;
+    }
+
+    /* Carousel container */
+    .carousel {
+      position: relative;
+      max-width: 1000px;
+      margin: 60px auto;
+      overflow: hidden;
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+
+    .slide {
+      min-width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      padding: 20px;
+    }
+
+    .logo-card {
+      width: 250px;
+      height: 220px;
+      background: #fff;
+      border: 1px solid #eee;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      position: relative;
+    }
+
+    /* Default image style */
+    .logo-card img {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+      transition: transform 0.3s ease, filter 0.3s ease;
+    }
+
+    /* When image hovered: show name */
+    .logo-card p {
+      font-size: 16px;
+      color: #333;
+      margin-top: 10px;
+      display: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .logo-card:hover p {
+      display: block;
+      opacity: 1;
+      color: rgb(208, 203, 203)
+    }
+
+    /* When touched or clicked: change image color (highlight) */
+    .logo-card.active {
+      background-color: #e6f9ef;
+      border-color: #00d084;
+      box-shadow: 0 4px 12px rgba(0, 208, 132, 0.3);
+      transform: scale(1.05);
+    }
+
+    .logo-card:hover img {
+      filter: brightness(0) saturate(100%) invert(39%) sepia(84%) saturate(372%) hue-rotate(93deg) brightness(97%) contrast(91%);
+    }
+
+    /* Arrows */
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 30px;
+      color: #777;
+      cursor: pointer;
+      background: rgba(255,255,255,0.8);
+      border-radius: 50%;
+      padding: 5px 10px;
+      user-select: none;
+    }
+
+    .arrow:hover {
+      color: #000;
+    }
+
+    .arrow.left {
+      left: 10px;
+    }
+
+    .arrow.right {
+      right: 10px;
+    }
+
+    /* Dots */
+    .dots {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .dot {
+      height: 10px;
+      width: 10px;
+      margin: 0 4px;
+      background-color: #ccc;
+      border-radius: 50%;
+      display: inline-block;
+      cursor: pointer;
+      margin-bottom:100px ;
+    }
+
+    .dot.active {
+      background-color: #00d084;
+    }
+
+    /* <!-- more services --> */
+      .moreservices {
+      background-color: #f3f0f0;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      justify-content: center;
+      align-items: center;
+      padding: 50px 150px;
+      margin-top: 50px;
+    }
+
+    .service {
+      display: flex;
+      background-color: #fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .service-img img {
+      width: 200px;
+      height: 250px;
+      object-fit: cover;
+      display: block;
+    }
+ 
+    .service-content {
+      text-align: left;
+      padding: 20px;
+      color: #555;
+    }
+
+    .service-content h3 {
+      font-size: 18px;
+      color: #333;
+    }
+
+    .service-content p {
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    @media(max-width: 900px) {
+      .moreservices {
+        grid-template-columns: 1fr;
+        padding: 30px;
+      }
+
+      .service-box {
+        flex-direction: column;
+      }
+
+      .service-img img {
+        width: 100%;
+      }
+    }
+
+    /* news  */
+
+    .news {
+      background-color: #f1eded;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      justify-content: center;
+      align-items: start;
+      padding: 50px 150px;
+    }
+
+    .news-box {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 60px;
+      align-items: center;
+      
+    }
+
+    .news-box:hover {
+      transform: translateY(-5px);
+    }
+
+    .news-img img {
+      width: 250px;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    .news-content {
+      padding: 25px 30px;
+      text-align: left;
+      max-width: 400px;
+    }
+
+    .news-content span {
+      font-size: 13px;
+      color: #999;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .news-content h3 {
+      font-size: 18px;
+      color: #333;
+      margin: 0 0 15px;
+    }
+
+    .news-content p {
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .news-content a {
+      color: #28a745;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .news-content a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 900px) {
+      .news {
+        grid-template-columns: 1fr;
+        padding: 30px;
+      }
+
+      .news-box {
+        flex-direction: column;
+      }
+
+      .news-img img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+
+      
+         
+/* travels */
+
+    .travel {
+      margin-top: 10px;
+      margin-bottom: 100px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr); /* 4 cards in one row */
+      gap: 20px;
+      padding: 20px;
+      text-align: center;
+      margin-left: 350px;
+    }
+
+    .travels {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .travel-img img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .travel-content {
+       margin-top: 10px;
+    }
+
+
+    .travel-content h3 {
+      font-size: 18px;
+      color: #333;
+      margin: 0 0 15px;
+    }
+
+    .travel-content p {
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    /* footer */
+    footer {
+      text-align: center;
+      padding: 40px 0;
+    }
+
+    .footer-container {
+      display: flex;
+      justify-content: center;
+      gap: 120px;
+      margin-bottom: 40px;
+    }
+
+    .footer-col h4 {
+      font-size: 18px;
+      color: #444;
+      margin-bottom: 15px;
+    }
+
+    .footer-col a {
+      display: block;
+      margin: 6px 0;
+      color: #00c26f;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    .footer-col a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-bottom {
+      font-size: 14px;
+      color: #777;
+      line-height: 1.8;
+    }
+
+    .footer-bottom span {
+      color: #00c26f;
+    }
+      
+      
+    </style>
+</head>
+<body>
+  <!-- IMAGE -->
+<div class="first-image" id="home">
+  <img src="https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_640.jpg">
+
+  <!-- NAVBAR -->
+  <div class="nav-links">
+    <div class="nav">
+      <div class="place">PLACES</div>
+        <a href="#home">Home</a>
+        <a href="#guides">City Guides</a>
+        <a href="#services">Services</a>
+        <a href="#travel">Travel With Us</a>
+        <a href="#contact">Contact</a>
+    </div>
+  </div>
+
+  <!-- TEXT + FORM -->
+  <div class="content-box"  >
+
+    <!-- LEFT TEXT -->
+    <div class="text-box">
+      <h2>Explore The World<br>With Ease</h2>
+
+      <button class="btn">SEE ONEPAGE VERSION</button>
+    </div>
+
+    <!-- RIGHT FORM -->
+    <div class="form-box">
+      <form>
+        <fieldset>
+
+          <div class="row">
+            <div class="field-group">
+              <label class="label">From</label>
+              <select>
+                <option>Australia</option>
+                <option>Japan</option>
+                <option>Canada</option>
+                <option>United States</option>
+                <option>Brazil</option>
+                <option>China</option>
+                <option>Israel</option>
+                <option>Philippines</option>
+                <option>Malaysia</option>
+                <option>Canada</option>
+                <option>Chile</option>
+                <option>Zimbabwe</option>
+                <option>india</option>
+              </select>
+            </div>
+
+            <div class="field-group">
+              <label class="label">To</label>
+              <select>
+                <option>Australia</option>
+                <option>Japan</option>
+                <option>Canada</option>
+                <option>United States</option>
+                <option>Brazil</option>
+                <option>China</option>
+                <option>Israel</option>
+                <option>Philippines</option>
+                <option>Malaysia</option>
+                <option>Canada</option>
+                <option>Chile</option>
+                <option>Zimbabwe</option>
+                <option>india</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="field-group">
+              <label class="label">Departure</label>
+              <input type="date">
+            </div>
+
+            <div class="field-group">
+              <label class="label">Arrival</label>
+              <input type="date">
+            </div>
+          </div>
+
+          <div class="radio-group">
+            <label><input type="radio" name="trip"> Round</label>
+            <label><input type="radio" name="trip"> Oneway</label>
+          </div>
+
+          <button type="submit" class="submit-btn">SUBMIT</button>
+
+        </fieldset>
+      </form>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- WHY WE LOVE PLACES -->
+<div class="love-places">
+<h3>Why we Love Places</h3>
+ <div class="underline"></div>
+<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+<div class="profile">
+  <img src="https://uicookies.com/demo/theme/places/assets/images/person_1.jpg">
+  <h3><bold>james smith</bold></h3>
+  <p>Chief Executive Officer</p>
+</div>
+</div>
+
+<!-- top places -->
+ <h3 class="top-place" id="guides">Top Places Around The World</h3>
+  <div class="underline"></div>
+  <div class="gallary">
+    
+  <div class="img-container">
+    <img src=https://uicookies.com/demo/theme/places/assets/images/img_1.jpg>
+    <p class="img-text">buea</p>
+  </div>
+
+  <div class="img-container">
+    <img src="https://uicookies.com/demo/theme/places/assets/images/img_2.jpg">
+    <p class=" img-text">Roads</p>
+  </div>
+
+  <div class="img-container">
+    <img src="https://uicookies.com/demo/theme/places/assets/images/img_3.jpg">
+    <p class=" img-text">Austrilia</p>
+  </div>
+
+  <div class="img-container">
+    <img src="https://uicookies.com/demo/theme/places/assets/images/img_4.jpg">
+    <p class="img-text">Japan</p>
+  </div>
+</div>
+
+<!-- our services -->
+<div class="small-text"  id="services">
+  <p>Our Services</p>
+  <div class="underline"></div>
+</div>
+
+<!-- image side content -->
+<div class="details">
+  <div  class="details-container">
+    <div class="details-img">
+      <img src="https://uicookies.com/demo/theme/places/assets/images/img_2.jpg">
+    </div>
+    <div class="details-content">
+      <h3>Customer Service</h3>
+      <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p><br>
+      <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
+      <a href="#" class="read-more">READ MORE</a>
+    </div>
+    </div>
+    <div  class="details-container">
+    <div class="details-content">
+      <h3>Payment Options</h3>
+      <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. </p><br>
+      <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar. </p>
+      <a href="#" class="read-more">READ MORE</a>
+    </div>
+    <div class="details-img">
+      <img src="https://uicookies.com/demo/theme/places/assets/images/img_3.jpg">
+    </div>
+    </div>
+  </div>
+</div>
+
+<!-- logos -->
+<div class="travel-section">
+  <h1>Travel With Us</h1>
+  <div class="underline"></div>
+  <div class="carousel">
+      <div class="carousel-track">
+ 
+        <!-- slide 1 -->
+         <div class="slide">
+          <div class="logo-card">
+            <img src="https://cdn-icons-png.flaticon.com/128/5943/5943500.png" alt="Teatro de la Caridad">
+            <p>Teatro de la Caridad</p>
+          </div>
+          <div class="logo-card">
+            <img src="https://cdn-icons-png.flaticon.com/128/3373/3373737.png" alt="Royal Museum">
+            <p>Royal Museum of Armed Forces</p>
+          </div>
+          <div class="logo-card">
+            <img src="https://cdn-icons-png.flaticon.com/128/8237/8237297.png" alt="Parthenon">
+            <p>Parthenon</p>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="slide">
+          <div class="logo-card">
+            <img src="https://cdn-icons-png.flaticon.com/128/1611/1611990.png" alt="Marina Bay Sands">
+            <p>Marina Bay Sands</p>
+          </div>
+          <div class="logo-card">
+            <img src="https://cdn-icons-png.flaticon.com/128/1651/1651523.png" alt="Sammara Minaret">
+            <p>Sammara Minaret</p>
+          </div>
+          <div class="logo-card">
+            <img src="https://cdn-icons-png.flaticon.com/128/2550/2550264.png" alt="Chiang Kai Shek Memorial">
+            <p>Chiang Kai Shek Memorial</p>
+          </div>
+        </div>
+        
+        <!-- Slide 2 -->
+        <div class="slide">
+          <div class="logo-card">
+            <img src="https://cdn-icons-png.flaticon.com/128/2160/2160071.png" alt="Marina Bay Sands">
+            <p>Charminar</p>
+          </div>
+          <div class="logo-card">
+            <img src="https://cdn-icons-png.flaticon.com/128/4369/4369467.png" alt="Sammara Minaret">
+            <p>Sammara Minaret</p>
+          </div>
+          <div class="logo-card">
+            <img src="https://cdn-icons-png.flaticon.com/128/3336/3336045.png" alt="Chiang Kai Shek Memorial">
+            <p>God temple</p>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="slide">
+          <div class="logo-card">
+            <img src="https://cdn-icons-png.flaticon.com/128/3654/3654976.png" alt="Marina Bay Sands">
+            <p>Statue of liberty</p>
+          </div>
+          <div class="logo-card">
+            <img src="https://cdn-icons-png.flaticon.com/128/2147/2147006.png" alt="Sammara Minaret">
+            <p>london bridge</p>
+          </div>
+          <div class="logo-card">
+            <img src="https://cdn-icons-png.flaticon.com/128/2483/2483964.png" alt="Chiang Kai Shek Memorial">
+            <p>Taj Mahal</p>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="slide">
+          <div class="logo-card">
+            <img src="https://cdn-icons-png.flaticon.com/128/1324/1324872.png" alt="Marina Bay Sands">
+            <p>Marina Bay Sands</p>
+          </div>
+          <div class="logo-card">
+            <img src="https://cdn-icons-png.flaticon.com/128/2465/2465330.png" alt="Sammara Minaret">
+            <p>Sammara Minaret</p>
+          </div>
+          <div class="logo-card">
+            <img src="https://cdn-icons-png.flaticon.com/128/25/25694.png" alt="Chiang Kai Shek Memorial">
+            <p>Chiang Kai Shek Memorial</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="arrow left">&#10094;</div>
+      <div class="arrow right">&#10095;</div>
+
+      <div class="dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </div>
+  </div>
+<!-- more services -->
+  <h3 class="top-place">More Services</h3>
+  <div class="underline"></div>
+  <div class="moreservices">
+  <div  class="service">
+    <div class="service-img">
+      <img src="https://uicookies.com/demo/theme/places/assets/images/img_1.jpg">
+    </div>
+    <div class="service-content">
+      <h3>01. Service Title Here</h3>
+      <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+    </div>
+  </div>
+
+  <div  class="service">
+    <div class="service-img">
+      <img src="https://uicookies.com/demo/theme/places/assets/images/img_2.jpg">
+    </div>
+    <div class="service-content">
+      <h3>02. Service Title Here</h3>
+      <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+    </div>
+  </div>
+
+  <div  class="service">
+    <div class="service-img">
+      <img src="https://uicookies.com/demo/theme/places/assets/images/img_3.jpg">
+    </div>
+    <div class="service-content">
+      <h3>03. Service Title Here</h3>
+      <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+    </div>
+  </div>
+  
+  <div  class="service">
+    <div class="service-img">
+      <img src="https://uicookies.com/demo/theme/places/assets/images/img_4.jpg">
+    </div>
+    <div class="service-content">
+      <h3>04. Service Title Here</h3>
+      <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+    </div>
+  </div>
+
+</div>
+
+<!-- Testimonial -->
+<div class="love-places">
+<h3>Testimonial</h3>
+ <div class="underline"></div>
+<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+<div class="profile">
+  <img src="https://uicookies.com/demo/theme/places/assets/images/person_1.jpg">
+  <h3><bold>james smith</bold></h3>
+  <p>Chief Executive Officer</p>
+</div>
+</div>
+
+<!-- news -->
+<h3 class="top-place">News</h3>
+  <div class="underline"></div>
+ <div class="news">
+  <div  class="news-box">
+    <div class="news-img">
+      <img src="https://uicookies.com/demo/theme/places/assets/images/img_1.jpg">
+    </div>
+    <div class="news-content">
+      <span>JANUARY 1ST 2018</span>
+      <h3>Travel To United States Without Visa</h3>
+      <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+      <a href="#">Read More</a>
+    </div>
+  </div>
+  
+
+  <div  class="news-box">
+    <div class="news-img">
+      <img src="https://uicookies.com/demo/theme/places/assets/images/img_3.jpg">
+    </div>
+    <div class="news-content">
+      <span>JANUARY 1ST 2018</span>
+      <h3>Travel To United States Without Visa</h3>
+      <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+      <a href="#">Read More</a>
+    </div>
+  </div>
+
+
+
+  <div  class="news-box">
+    <div class="news-img">
+      <img src="https://uicookies.com/demo/theme/places/assets/images/img_2.jpg">
+    </div>
+    <div class="news-content">
+      <span>JANUARY 1ST 2018</span>
+      <h3>Travel To United States Without Visa</h3>
+      <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+      <a href="#">Read More</a>
+    </div>
+  </div>
+  
+
+  <div  class="news-box">
+    <div class="news-img">
+      <img src="https://uicookies.com/demo/theme/places/assets/images/img_4.jpg">
+    </div>
+    <div class="news-content">
+      <span>JANUARY 1ST 2018</span>
+      <h3>Travel To United States Without Visa</h3>
+      <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+      <a href="#">Read More</a>
+    </div>
+  </div>
+</div>
+
+<!-- tavel with us -->
+ <h3 class="top-place" id="travel">Travel With Us</h3>
+ <div class="underline"></div>
+ <div class="travel">
+  <div class="travels">
+    <div class="travel-img">
+      <img src="https://uicookies.com/demo/theme/places/assets/images/img_2.jpg">
+    </div>
+    <div class="travel-content">
+      <h3>service title here</h3>
+      <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+    </div>
+  </div>
+
+  <div class="travels">
+    <div class="travel-img">
+      <img src="https://uicookies.com/demo/theme/places/assets/images/img_1.jpg">
+    </div>
+    <div class="travel-content">
+      <h3>service title here</h3>
+      <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+    </div>
+  </div>
+
+
+  <div class="travels">
+    <div class="travel-img">
+      <img src="https://uicookies.com/demo/theme/places/assets/images/img_4.jpg">
+    </div>
+    <div class="travel-content">
+      <h3>service title here</h3>
+      <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+    </div>
+  </div>
+ </div>
+      <div class="dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+<hr>
+ <!-- footer -->
+
+ <footer>
+  <div class="footer-container">
+
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Contact</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Contact</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Contact</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Contact</a>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2017. All Rights Reserved.</p>
+    <p>Designed & Developed by <span>uiCookies</span></p>
+    <p>Demo Images: <span>Unsplash</span></p>
+  </div>
+</footer>
+
+<script>
+    const track = document.querySelector('.carousel-track');
+    const slides = Array.from(track.children);
+    const nextButton = document.querySelector('.arrow.right');
+    const prevButton = document.querySelector('.arrow.left');
+    const dotsNav = document.querySelector('.dots');
+    const dots = Array.from(dotsNav.children);
+
+    let currentIndex = 0;
+
+    function updateCarousel(index) {
+      track.style.transform = `translateX(-${index * 100}%)`;
+      dots.forEach(dot => dot.classList.remove('active'));
+      dots[index].classList.add('active');
+    }
+
+    nextButton.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % slides.length;
+      updateCarousel(currentIndex);
+    });
+
+    prevButton.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      updateCarousel(currentIndex);
+    });
+
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        currentIndex = index;
+        updateCarousel(currentIndex);
+      });
+    });
+
+    // Active state on click
+    const logoCards = document.querySelectorAll('.logo-card');
+    logoCards.forEach(card => {
+      card.addEventListener('click', () => {
+        logoCards.forEach(c => c.classList.remove('active'));
+        card.classList.add('active');
+      });
+    });
+  </script>
+
+</body>
+</html>
